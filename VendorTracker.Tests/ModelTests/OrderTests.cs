@@ -14,6 +14,12 @@ namespace VendorTracker.Tests
     public string dateOne;
     public Order orderOne;
 
+    public string titleTwo;
+    public string descriptionTwo;
+    public int priceTwo;
+    public string dateTwo;
+    public Order orderTwo;
+
     [TestInitialize]
     public void TestInitialize()
     {
@@ -22,6 +28,12 @@ namespace VendorTracker.Tests
       priceOne = 100;
       dateOne = "9/15/22";
       orderOne = new Order(titleOne, descriptionOne, priceOne, dateOne);
+
+      titleTwo = "Baklava";
+      descriptionTwo = "25 pistachio & 25 walnut";
+      priceTwo = 50;
+      dateTwo = "9/20/22";
+      orderTwo = new Order(titleTwo, descriptionTwo, priceTwo, dateTwo);
     }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
@@ -34,6 +46,13 @@ namespace VendorTracker.Tests
     {
       string result = orderOne.Title;
       Assert.AreEqual(titleOne, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnList_List()
+    {
+      List<Order> orderList = new List<Order> { orderOne, orderTwo };
+      CollectionAssert.AreEqual(orderList, Order.GetAll());
     }
   }
 }
