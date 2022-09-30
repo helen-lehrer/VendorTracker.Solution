@@ -6,7 +6,7 @@ using System;
 namespace VendorTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
     public string titleOne;
     public string descriptionOne;
@@ -19,6 +19,11 @@ namespace VendorTracker.Tests
     public int priceTwo;
     public string dateTwo;
     public Order orderTwo;
+    
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestInitialize]
     public void TestInitialize()
@@ -35,6 +40,7 @@ namespace VendorTracker.Tests
       dateTwo = "9/20/22";
       orderTwo = new Order(titleTwo, descriptionTwo, priceTwo, dateTwo);
     }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -52,7 +58,8 @@ namespace VendorTracker.Tests
     public void GetAll_ReturnList_List()
     {
       List<Order> orderList = new List<Order> { orderOne, orderTwo };
-      CollectionAssert.AreEqual(orderList, Order.GetAll());
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(orderList, result);
     }
   }
 }
