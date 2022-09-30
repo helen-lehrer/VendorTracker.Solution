@@ -21,5 +21,11 @@ namespace VendorTracker.Tests
       phoneNumber = "(503) 477-5514";
       vendorOne = new Vendor(name, description, phoneNumber);      
     }
+
+    [TestMethod]
+    public void VendorConstructor_CreatesInstanceofVendor_Vendor()
+    {
+      Assert.AreEqual(typeof(Vendor), vendorOne.GetType());
+    }
   }
 }
