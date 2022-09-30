@@ -35,5 +35,12 @@ namespace VendorTracker.Controllers
         Vendor foundVendor = Vendor.Find(id);
         return View(foundVendor);
         }
+
+        [HttpPost("vendor/{id}")]
+        public ActionResult Show(int id)
+        {
+        Vendor foundVendor = Vendor.Find(id);
+        return View(foundVendor);
+        }
     }
 }
