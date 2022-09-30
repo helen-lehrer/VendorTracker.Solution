@@ -1,6 +1,6 @@
 # Vendor and Order Tracker
 
-#### A C# MVC Application for a Bakery
+#### An MVC Application for a Bakery
 
 #### By Helen Lehrer
 
@@ -10,13 +10,13 @@
 
 * A splash pages with a welcome message linking to a Vendors page
 * A Vendors page that contains a link to a page with a form to create a new `Vendor` and clickable `Vendor` names that go to new page displaying the selected `Vendor` information and orders.
-* On the selected `Vendor` page, there is a link to page with a form to create a new `Order` and a list of clickable `Order`s that displays `Order` details.
+* On the selected `Vendor` page, there is a link to page with a form to create a new `Order` and a list of clickable `Order`s that display `Order` details.
 
-This codebase features:
+Features:
 
 * A splash page
-* The `Order` objects are nested within `Vendor` objects
-* Multiple Controllers 
+* `Order` objects are nested within `Vendor` objects
+* Multiple controllers 
 * Throughly tested Models
 * GET and POST requests
 * MVC routes follow RESTful conventions
