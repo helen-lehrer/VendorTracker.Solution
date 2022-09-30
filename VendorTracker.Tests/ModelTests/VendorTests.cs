@@ -6,7 +6,7 @@ using System;
 namespace VendorTracker.Tests 
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
     public Vendor vendorOne;
     public string nameOne;
@@ -17,6 +17,11 @@ namespace VendorTracker.Tests
     public string nameTwo;
     public string descriptionTwo;
     public string phoneNumberTwo;
+
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestInitialize]
     public void TestInitialize()
