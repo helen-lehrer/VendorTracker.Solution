@@ -9,5 +9,11 @@ namespace VendorTracker.Controllers
 {
     public class VendorController : Controller
     {
+        [HttpGet("/vendors")]
+        public ActionResult Index()
+        {
+        List<Vendor> vendors = Vendor.GetAll(); 
+        return View(vendors);
+        }
     }
 }
