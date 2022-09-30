@@ -28,5 +28,12 @@ namespace VendorTracker.Tests
     {
       Assert.AreEqual(typeof(Order), orderOne.GetType());
     }
+
+    [TestMethod]
+    public void GetTitle_ReturnOrderTitle_String()
+    {
+      string result = orderOne.Title;
+      Assert.AreEqual(titleOne, result);
+    }
   }
 }
