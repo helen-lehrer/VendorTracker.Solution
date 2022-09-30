@@ -9,17 +9,27 @@ namespace VendorTracker.Tests
   public class VendorTests
   {
     public Vendor vendorOne;
-    public string name;
-    public string description;
-    public string phoneNumber;
+    public string nameOne;
+    public string descriptionOne;
+    public string phoneNumberOne;
+
+    public Vendor vendorTwo;
+    public string nameTwo;
+    public string descriptionTwo;
+    public string phoneNumberTwo;
 
     [TestInitialize]
     public void TestInitialize()
     {
-      name = "Twisted Croissant";
-      description = "We Believe in Quality, Community, and Croissants That Are (Almost) Too Pretty to Eat";
-      phoneNumber = "(503) 477-5514";
-      vendorOne = new Vendor(name, description, phoneNumber);      
+      nameOne = "Twisted Croissant";
+      descriptionOne = "We Believe in Quality, Community, and Croissants That Are (Almost) Too Pretty to Eat";
+      phoneNumberOne = "(503) 477-5514";
+      vendorOne = new Vendor(nameOne, descriptionOne, phoneNumberOne);      
+
+      nameTwo = "Fleur De Lis Bakery & Cafe";
+      descriptionTwo = "Bright French bakeshop known for homemade breads & pastries serving egg dishes, salads & sandwiches.";
+      phoneNumberTwo = "(503) 459-4887";
+      vendorTwo = new Vendor(nameTwo, descriptionTwo, phoneNumberTwo);      
     }
 
     [TestMethod]
@@ -32,7 +42,16 @@ namespace VendorTracker.Tests
     public void GetName_ReturnName_String()
     {
       string result = vendorOne.Name;
-      Assert.AreEqual(name, result);
+      Assert.AreEqual(nameOne, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnListOfVendors_List()
+    {
+      List<Vendor> vendorList = new List<Vendor>{ vendorOne, vendorTwo };
+      CollectionAssert.AreEqual(vendorList, Vendor.GetAll());
+    }
+
+
   }
 }
