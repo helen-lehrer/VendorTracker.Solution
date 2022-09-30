@@ -22,5 +22,20 @@ namespace VendorTracker.Controllers
             Order foundOrder = Order.Find(id2); 
             return View(foundOrder);
         }
+
+        [HttpGet("/order/search")]
+        public ActionResult Search(string title)
+        {
+          int orderId = Order.SearchByTitle(title);
+          Order searchedOrder = Order.Find(orderId);  
+          return View(searchedOrder);
+        }
+
+        [HttpGet("/order/{id}")]
+        public ActionResult SearchShow(int id)
+        {
+        Order searchedOrder = Order.Find(id);
+        return View(searchedOrder);
+        }
     }
 }

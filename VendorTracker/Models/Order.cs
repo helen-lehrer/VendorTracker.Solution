@@ -10,6 +10,7 @@ namespace VendorTracker.Models
     public string Date { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order>{};
+    public static Dictionary<string, int> Search = new Dictionary<string, int>();
 
     public Order (string title, string description, int price, string date)
     {
@@ -19,6 +20,7 @@ namespace VendorTracker.Models
       Date = date;
       _instances.Add(this);
       Id = _instances.Count;
+      Search.Add(this.Title, this.Id);
     }
 
     public static void ClearAll()
@@ -36,5 +38,9 @@ namespace VendorTracker.Models
       return _instances[id-1];
     }
 
+    public static int SearchByTitle(string title)
+    {
+      return Search[title];
+    }
   }
 }
