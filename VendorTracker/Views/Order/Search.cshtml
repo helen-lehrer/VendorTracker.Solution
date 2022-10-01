@@ -2,8 +2,8 @@
       Layout = "_Layout";
 }
 <h1>Search Result</h1>
-  if (!Model)
+   @* @if (!Model.Title)
   {
     <p>There are no orders that match this title.</p>
-  }
+  }  *@
 <h3><a href="/order/@Model.Id">@Model.Title</a></h3>
