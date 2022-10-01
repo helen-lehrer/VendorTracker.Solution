@@ -11,3 +11,21 @@ div#footer a {
   color:#CCC;
   padding-left: 30px;
 }
+
+div#header {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background:#333;
+  padding:8px;
+  color: #CCC;
+}
+
+div#homepage {
+  padding-top: 55px;
+}
+
+div#homepage button {
+  margin: 10px;
+}

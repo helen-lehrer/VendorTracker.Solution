@@ -25,10 +25,14 @@ namespace VendorTracker.Controllers
 
         [HttpGet("/order/search")]
         public ActionResult Search(string title)
-        {
+        {  
           int orderId = Order.SearchByTitle(title);
           Order searchedOrder = Order.Find(orderId);  
+          if (typeof(Order) == searchedOrder.GetType())
+          {
           return View(searchedOrder);
+          }
+          return View();
         }
 
         [HttpGet("/order/{id}")]

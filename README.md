@@ -20,6 +20,7 @@ Features:
 * Throughly tested Models
 * GET and POST requests
 * MVC routes follow RESTful conventions
+* Search order functionality
 
 ## Technologies Used
 
@@ -82,7 +83,7 @@ $ dotnet run
 
 ## Known Bugs
 
-*none
+* While using the search order functionality, if the title doesn't exist, the application breaks
 
 ## License
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)

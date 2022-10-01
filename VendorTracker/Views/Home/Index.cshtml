@@ -1,12 +1,13 @@
  @{
       Layout = "_Layout";
   }
-  <h1>Welcome to your Vendor Management Dashboard, Pierre!</h1>
-  <h3><a href="/vendor">View My Vendors</a></h3>
-  <h4>Search for an Order:</h4>
-  <form action="/order/search" method="get">
+  @await Html.PartialAsync("Header")
+  <div id="homepage" class="jumbotron">
+  <h3 class="display-5"><a href="/vendor">View My Vendors</a></h3>
+  <h4 class="lead">Search for an Order:</h4>
+  <form action="/order/search" method="get" class="form-group">
     <label for="title">Order Title:</label>
-    <input type="text" name="title" id="title">
-    <button type="submit">Search</button>
+    <input type="text" name="title" id="title" class="form-control">
+    <button type="submit" class="btn btn-primary">Search</button>
   </form>
-  
+  </div>
