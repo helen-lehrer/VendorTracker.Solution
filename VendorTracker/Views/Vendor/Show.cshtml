@@ -1,21 +1,21 @@
- @{
-      Layout = "_Layout";
-  }
-  @using VendorTracker.Models;
-  <h1>@Model.Name</h1>
-  <h3>Description:</h3>
-  <p>@Model.Description</p>
-  <h3>Phone Number:</h3>
-  <p>@Model.PhoneNumber</p>
-  <h3>Orders</h3>
-  @if (Model.Orders.Count == 0)
-  {
-    <p>There are no orders from this vendor.</p>
-  }
-  @foreach (Order order in Model.Orders)
-  {
-    <ul>
-        <li><a href="/vendor/@Model.Id/order/@order.Id">@order.Title</a></li>
-    </ul>
-  }
-  <h3><a href="/vendor/@Model.Id/order/new">Place A New Order</a></h3>
+@{
+    Layout = "_Layout";
+}
+@using VendorTracker.Models;
+<h1>@Model.Name</h1>
+<h3>Description:</h3>
+<p>@Model.Description</p>
+<h3>Phone Number:</h3>
+<p>@Model.PhoneNumber</p>
+<h3>Orders</h3>
+@if (Model.Orders.Count == 0)
+{
+  <p>There are no orders from this vendor.</p>
+}
+@foreach (Order order in Model.Orders)
+{
+  <ul>
+    <li><a href="/vendor/@Model.Id/order/@order.Id">@order.Title</a></li>
+  </ul>
+}
+<h3><a href="/vendor/@Model.Id/order/new">Place A New Order</a></h3>
