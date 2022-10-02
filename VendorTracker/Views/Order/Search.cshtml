@@ -1,9 +1,14 @@
 @{
       Layout = "_Layout";
 }
+@using VendorTracker.Models;
+
 <h1>Search Result</h1>
-   @* @if (!Model.Title)
-  {
-    <p>There are no orders that match this title.</p>
-  }  *@
+@if (Model.Title)
+{
 <h3><a href="/order/@Model.Id">@Model.Title</a></h3>
+} 
+else
+{
+<p>This order does not exist.</p>
+}

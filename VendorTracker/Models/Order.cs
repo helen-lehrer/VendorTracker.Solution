@@ -40,7 +40,16 @@ namespace VendorTracker.Models
 
     public static int SearchByTitle(string title)
     {
-      return Search[title];
+      int value = 0;
+      if (Search.TryGetValue(title, out value))
+      {
+      return value;
+      }
+      else
+      {
+        return -1;
+      }
+
     }
   }
 }

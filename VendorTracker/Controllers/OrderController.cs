@@ -27,13 +27,15 @@ namespace VendorTracker.Controllers
         public ActionResult Search(string title)
         {  
           int orderId = Order.SearchByTitle(title);
+          string errorMessage = "This order does not exist.";
           Order searchedOrder = Order.Find(orderId);  
-          if (typeof(Order) == searchedOrder.GetType())
+
+          if (orderId == -1)
           {
+            return View(errorMessage);
+          }
           return View(searchedOrder);
           }
-          return View();
-        }
 
         [HttpGet("/order/{id}")]
         public ActionResult SearchShow(int id)
