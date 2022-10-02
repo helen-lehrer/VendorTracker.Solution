@@ -23,6 +23,7 @@ namespace VendorTracker.Tests
     public void Dispose()
     {
       Order.ClearAll();
+      
     }
 
     [TestInitialize]
